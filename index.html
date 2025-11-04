@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+
   <html lang="en-CA">
 <head>
 <title>Exercise 7: Banh Mi, menus, and layout</title>
@@ -9,71 +9,123 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">  
 <style>
 
-  body {
+body {
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings: "wdth" 100;
+  font-variation-settings: "width" 100;
   font-size: 16px;
-  width: 960px;
+  max-width: 960px;
 }
-   
-  h1 {
+  
+h1 {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-size: 40px;
+  font-weight: 500;
+  font-style: normal;
+  text-align: center;
+}
+  
+h2 {
   font-family: "Oswald", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
+  font-size: 24px;
+  font-style: normal;  
+  text-align: center;
+}
+  
+h3 {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-size: 22px;
   font-style: normal;
-  }
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+}
   
-  #site-title {
-  }
+#site-title {
+}
   
-  nav {
+nav {
   font-family: "Raleway", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  }
-  
-  footer {
-  }
+}
+
 
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: white
+  background-color: #ffffff;
+  display: block;
+  text-align: center;
 }
 
 ul li {
-  float: left;
-  display: block;
+  display: inline-block;
   color: black;
   text-align: center;
   padding: 14px 16px;
+  background-color: #f5f5f5;
+}
+  
+a {
+  color: #000000;
+  font-size: 16px;
   text-decoration: none;
 }
+  
+  
 a:hover {
   color: orchid;
   font-size: 16px;
+  text-decoration: none;
 }
+
+  .wrapper {
+    background-color: #e7e7e7;
+  }
+  .container {
+    display: grid;
+    grid-template-columns: calc(50% - 5px) calc(50% - 5px);
+    grid-gap: 10px;
+    padding: 10px;
+  }
+  .container div {
+    background-color: #f5f5f5;
+    box-shadow: 0px 4px 5px #afa599;
+    padding: 10px;
+    font-size: 30px;
+    text-align: center;
+  }
   
-.container {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  background-color: dodgerblue;
-  padding: 10px;
-}
-.container div {
-  background-color: #f1f1f1;
-  border: 1px solid black;
-  padding: 10px;
-  font-size: 30px;
-  text-align: center;
-}
+  footer {
+    background-color: #f5f5f5;
+    box-shadow: 0px 4px 5px #afa599;
+    padding: 10px;
+    font-size: 24px;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+  }
   
+  .img-bun {
+    width: 100%;
+    border: 1px solid #afa599;
+  }
 </style>
 </head>
 <body><h1 id="site-title">Greg’s Banh Mi</h1>
@@ -85,17 +137,35 @@ a:hover {
 <li><a href="/">Contact</a></li>   
 </ul>
 </nav>
-<h1>At Greg's Banh Mi, we're serving up the perfect marriage of French and Vietnamese culinary traditions—crispy-on-the-outside, pillowy-on-the-inside baguettes loaded with bold, fresh flavorus that'll make your taste buds sing.</h1>
-  
-  
-<h2>Classic Pork Banh Mi</h2>
-<p>Tender marinated pork topped with crisp pickled vegetables, fresh cilantro, and a smear of pâté on a perfectly crusty baguette. A traditional favorite that balances savory, sweet, and tangy flavors in every bite.</p>
-<h2>Lemongrass Chicken Banh Mi</h2>
-<p>Grilled chicken marinated in fragrant lemongrass and garlic, paired with cucumber, jalapeños, and our house mayo. Light yet satisfying, this sandwich brings bright, aromatic flavors that'll transport you straight to Saigon.</p>
-<h2>Tofu Banh Mi</h2>
-<p>Crispy pan-fried tofu glazed in sweet soy sauce, layered with daikon, carrots, and fresh herbs for a vegetarian delight. Proof that plant-based can be just as bold and craveable as any meat-filled sandwich.</p>
-<h2>Five-Spice Beef Banh Mi</h2>
-<p>Thinly sliced beef seared with aromatic five-spice blend and served with pickled vegetables and spicy Sriracha mayo. Rich, warming spices meet cool, crunchy toppings for an unforgettable flavor experience.</p>
+<h2>At Greg's Banh Mi, we're serving up the perfect marriage of French and Vietnamese culinary traditions—crispy-on-the-outside, pillowy-on-the-inside baguettes loaded with bold, fresh flavorus that'll make your taste buds sing.</h2>
+
+<div class="wrapper"> 
+<div class="container">
+  <div>
+    <img src="https://github.com/ywquach/exercise-6/blob/main/banh-mi.jpg?raw=true" alt="Yummy Sandwich" class="img-bun">
+    <h3>Classic Pork Banh Mi</h3>
+    <p>Tender marinated pork topped with crisp pickled vegetables, fresh cilantro, and a smear of pâté on a perfectly crusty baguette. A traditional favorite that balances savory, sweet, and tangy flavors in every bite.</p>
+  </div>
+  <div>
+    <img src="https://github.com/ywquach/exercise-6/blob/main/banh-mi.jpg?raw=true" alt="Yummy Sandwich" class="img-bun">
+    <h3>Lemongrass Chicken Banh Mi</h3>
+    <p>Grilled chicken marinated in fragrant lemongrass and garlic, paired with cucumber, jalapeños, and our house mayo. Light yet satisfying, this sandwich brings bright, aromatic flavors that'll transport you straight to Saigon.</p>
+  </div>
+  <div> 
+    <img src="https://github.com/ywquach/exercise-6/blob/main/banh-mi.jpg?raw=true" alt="Yummy Sandwich" class="img-bun">
+    <h3>Tofu Banh Mi</h3>
+    <p>Crispy pan-fried tofu glazed in sweet soy sauce, layered with daikon, carrots, and fresh herbs for a vegetarian delight. Proof that plant-based can be just as bold and craveable as any meat-filled sandwich.</p>
+  </div>  
+  <div>
+    <img src="https://github.com/ywquach/exercise-6/blob/main/banh-mi.jpg?raw=true" alt="Yummy Sandwich" class="img-bun">
+    <h3>Five-Spice Beef Banh Mi</h3>
+    <p>Thinly sliced beef seared with aromatic five-spice blend and served with pickled vegetables and spicy Sriracha mayo. Rich, warming spices meet cool, crunchy toppings for an unforgettable flavor experience.</p>
+  </div>
+  </div>
 <footer>Because life's too short for boring sandwiches. Greg's got you covered—one crispy baguette at a time.</footer>
+</div>  
+
+
+
 </body>
 </html>
